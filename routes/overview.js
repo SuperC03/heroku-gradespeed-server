@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         const { username, password, schoolid } = req.query;
         gs.getGradesOverview(username, password, schoolid)
             .then(grades => {
-                res.status(500).json(grades);
+                res.status(200).json(grades);
             })
             .catch(err => {
                 res.status(401).send(err);
